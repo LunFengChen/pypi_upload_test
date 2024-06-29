@@ -1,0 +1,13 @@
+pip install wheel
+pip install twine  # twine 是一个用于上传包到 PyPI 的工具。
+pip install setuptools
+
+
+%home%/.pypirc中写入
+[pypi]
+username = __token__
+password = <the token value, including the `pypi-` prefix>
+
+
+python setup.py sdist bdist_wheel
+twine upload dist/*
